@@ -1,6 +1,1 @@
-# workshop_gdansk
-Hello Gdansk!
-
-
-Zmiana jakas
-sdadasd
+du¿e zmiany w readme
