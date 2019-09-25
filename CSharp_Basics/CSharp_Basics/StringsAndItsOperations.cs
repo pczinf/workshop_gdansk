@@ -10,30 +10,37 @@ namespace CSharp_Basics
     [TestFixture]
     public class StringsAndItsOperations
     {
-        //        /// <summary>
-        //        /// String is diffrent then previues types we talk about
-        //        /// values of string we are passing in quotation marks
-        //        /// 
-        //        /// Create new string with your name and then add them together
-        //        /// </summary>
-        //        [Test]
-        //        public void Bascis_Of_Strings()
-        //        {
-        //            string Example = "This is example string";
-        //        }
+        /// <summary>
+        /// String is diffrent then previues types we talk about
+        /// values of string we are passing in quotation marks
+        /// 
+        /// Create new string with your name and then add them together
+        /// </summary>
+        [Test]
+        public void Bascis_Of_Strings()
+        {
+            string Example = "This is example string";
+            string myName = ".\nPaweł";
+            Example = Example + myName;
+            Console.WriteLine(Example);
+        }
 
-        //        /// <summary>
-        //        ///  string is  first Reference Type you see (We will talk more about them later)
-        //        ///  which means he doesn't have to have value.
-        //        ///  use string.Empty;
-        //        ///  create new strings itsEmpty and make it empty
-        //        /// </summary>
-        //        [Test]
-        //        public void String_Initialization()
-        //        {
+        /// <summary>
+        ///  string is  first Reference Type you see (We will talk more about them later)
+        ///  which means he doesn't have to have value.
+        ///  use string.Empty;
+        ///  create new strings itsEmpty and make it empty
+        /// </summary>
+        [Test]
+        public void String_Initialization()
+        {
+            int mi = int.MaxValue;
+            string x = string.Empty;
+            string y = "";
+            string itsEmpty = x;
 
-        //            Assert.That(itsEmpty, Is.Not.Null);
-        //        }
+            Assert.That(itsEmpty, Is.Not.Null);
+        }
 
         //        /// <summary>
         //        /// + is not best way of adding string
