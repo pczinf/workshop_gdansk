@@ -19,10 +19,10 @@ namespace CSharp_Basics
         [Test]
         public void Bascis_Of_Strings()
         {
-            string Example = "This is example string";
+            string example = "This is example string";
             string myName = ".\nPaweł";
-            Example = Example + myName;
-            Console.WriteLine(Example);
+            example = example + myName;
+            Console.WriteLine(example);
         }
 
         /// <summary>
@@ -34,55 +34,58 @@ namespace CSharp_Basics
         [Test]
         public void String_Initialization()
         {
-            int mi = int.MaxValue;
+            ////int mi = int.MaxValue;
             string x = string.Empty;
-            string y = "";
+            ////string y = "";
             string itsEmpty = x;
 
             Assert.That(itsEmpty, Is.Not.Null);
         }
 
-        //        /// <summary>
-        //        /// + is not best way of adding string
-        //        ///  use string.Concat();
-        //        ///  put sentence together
-        //        /// </summary>
-        //        [Test]
-        //        public void Adding_String()
-        //        {
-        //            string first = "pancakes.";
-        //            string second = "I like";
-        //
-        //            Assert.AreEqual(result, "I like pancakes.");
-        //        }
+        /// <summary>
+        /// + is not best way of adding string
+        ///  use string.Concat();
+        ///  put sentence together
+        /// </summary>
+        [Test]
+        public void Adding_String()
+        {
+            string first = "pancakes.";
+            string second = "I like";
+            string result = string.Concat(second, ' ', first);
 
-        //        /// <summary>
-        //        /// There is few more ways of constructing strings for example if you need add values of other variables inside you can do
-        //        /// https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.7.1#Starting
-        //        /// create string with both x and y insed
-        //        /// </summary>
-        //        [Test]
-        //        public void String_Format()
-        //        {
-        //            int x = 500;
-        //            int y = 453;
-        //            string result;
-        //
-        //            StringAssert.Contains(result, x.ToString());
-        //            StringAssert.Contains(result, y.ToString());
-        //        }
+            Assert.AreEqual(result, "I like pancakes.");
+        }
 
-        //        /// <summary>
-        //        /// From theString return word "thing".
-        //        /// hint use Substring() method
-        //        /// </summary>
-        //        [Test]
-        //        public void Substrings()
-        //        {
-        //            var theString =
-        //                "The interesting thing about London is that there are always stylish surprises around every corner.";
-        //
-        //            Assert.AreEqual(result,"thing");
-        //        }
+        /// <summary>
+        /// There is few more ways of constructing strings for example if you need add values of other variables inside you can do
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.7.1#Starting
+        /// create string with both x and y insed
+        /// </summary>
+        [Test]
+        public void String_Format()
+        {
+            int x = 500;
+            int y = 453;
+            ////            string result = x.ToString()+y.ToString();
+            string result = $"to jest x = {x} a y={y}";
+            StringAssert.Contains(x.ToString(), result);
+            StringAssert.Contains(y.ToString(), result);
+        }
+
+        /// <summary>
+        /// From theString return word "thing".
+        /// hint use Substring() method
+        /// </summary>
+        [Test]
+        public void Substrings()
+        {
+            var theString =
+                "The interesting thing about London is that there are always stylish surprises around every corner.";
+            string result = theString.Substring(16, 5);
+            Assert.AreEqual(result, "thing");
+            result = theString.Replace('e', 'f');
+            Console.WriteLine(result);
+        }
     }
 }
