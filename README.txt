@@ -3,6 +3,7 @@ Hello Gdansk!
 
 
 Zmiana jakas
-sdadasd
+d
 
-cze
+cze,,
+fcvnvcnvn
