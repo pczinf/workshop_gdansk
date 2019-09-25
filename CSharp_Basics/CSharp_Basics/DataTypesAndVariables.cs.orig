@@ -12,6 +12,7 @@ namespace CSharp_Basics
     public class DataTypesAndVariables
     {
 
+
         /*
          *1. Select each test and uncomment it (Ctrl+K, Ctrl+U)
          *2. Then follow the rules described in summary.
@@ -58,18 +59,26 @@ namespace CSharp_Basics
         [Test]
         public void Operation_On_Integers()
         {
-            int x = 4;
-            int y = 5;
+            int X = 4;
+            int Y = 5;
+<<<<<<< HEAD
+=======
+            
+>>>>>>> Marta/develop
 
             /*
              * There are few other ways you can do this
              * int add = 0;
              * add = x+y;
              */
-            int add = x + y;
-            int subtract = x - y;
-            int multiply = x * y;
-            double divide = (double)y / x;
+            int add = X + Y;
+            int subtract = X - Y;
+            int multiply = X * Y;
+<<<<<<< HEAD
+            double divide =  (double)Y/X;
+=======
+            double divide = (double) Y / X;
+>>>>>>> Marta/develop
 
             Assert.AreEqual(9, add, "Example Has wrong value did you changed it?");
             Assert.AreEqual(-1, subtract, "Wrong value maybe other way around?");
