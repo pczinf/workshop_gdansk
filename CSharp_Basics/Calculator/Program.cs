@@ -8,6 +8,7 @@ namespace Calculator
 {
    public class Program
     {
+        static bool quit = false;
         public static void Main(string[] args)
         {
             /* double x = 14;
@@ -26,24 +27,36 @@ namespace Calculator
             } while (i<10);*/
             /*for (int j=0;j<10;j++)
             { }*/
-            while (true)
+            while (!quit)
                 {
                     double pnum1 = GetValueFromUser("First number=");
+                if (quit)
+                {
+                    Console.WriteLine("KONIEC");
+                    Console.ReadKey();
+                    return;
+                }
                     double pnum2 = GetValueFromUser("Second number=");
-                    ////result = pnum1 * pnum2;
-                    ////Console.WriteLine("x*y="+result);
-                    ////Console.WriteLine($"x*y={result}");
-                    /*
-                    result = Add(pnum1, pnum2);
-                    Console.WriteLine($"x+y={result}");
-                    result = Subtr(pnum1, pnum2);
-                    Console.WriteLine($"x-y={result}");
-                    result = Mult(pnum1, pnum2);
-                    Console.WriteLine($"x*y={result}");
-                    result = Div(pnum1, pnum2);
-                    Console.WriteLine($"x/y={result}");
-                    */
-                    Console.Write("Operation: ");
+                if (quit)
+                {
+                    Console.WriteLine("KONIEC");
+                    Console.ReadKey();
+                    return;
+                }
+                ////result = pnum1 * pnum2;
+                ////Console.WriteLine("x*y="+result);
+                ////Console.WriteLine($"x*y={result}");
+                /*
+                result = Add(pnum1, pnum2);
+                Console.WriteLine($"x+y={result}");
+                result = Subtr(pnum1, pnum2);
+                Console.WriteLine($"x-y={result}");
+                result = Mult(pnum1, pnum2);
+                Console.WriteLine($"x*y={result}");
+                result = Div(pnum1, pnum2);
+                Console.WriteLine($"x/y={result}");
+                */
+                Console.Write("Operation: ");
                     string operation = Console.ReadLine();
                     if (operation == "q")
                     {
@@ -59,13 +72,19 @@ namespace Calculator
 
         public static double GetValueFromUser(string message)
         {
+            double pnum1;
             while (true)
             {
                 Console.Write(message);
                 string valueFromUser = Console.ReadLine();
-                double pnum1;
+                if (valueFromUser=="q")
+                { quit = true;
+                    return 0;
+                }
                 if (!double.TryParse(valueFromUser, out pnum1))
-                { Console.WriteLine("Nieliczba! Popraw!"); }
+                { ///Console.WriteLine("Nieliczba! Popraw!");
+                    message = "Nieliczba! Popraw! ";
+                }
                 else return pnum1;
             }
         }
