@@ -8,7 +8,7 @@ namespace Calculator
 {
    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             /* double x = 14;
              double y = 230;
@@ -44,16 +44,19 @@ namespace Calculator
                 result = Add(pnum1, pnum2);
                 Console.WriteLine($"x+y={result}");
             }
+
             if (operation == "-")
             {
                 result = Subtr(pnum1, pnum2);
                 Console.WriteLine($"x-y={result}");
             }
+
             if (operation == "*")
             {
                 result = Mult(pnum1, pnum2);
                 Console.WriteLine($"x*y={result}");
             }
+
             if (operation == "/")
             {
                 result = Div(pnum1, pnum2);
@@ -61,8 +64,6 @@ namespace Calculator
             }
 
             Console.ReadKey();
-
-            
         }
 
         public static double Add(double num1, double num2)
@@ -76,6 +77,7 @@ namespace Calculator
             double result = num1 - num2;
             return result;
         }
+
         public static double Mult(double num1, double num2)
         {
             double result = num1 * num2;
