@@ -30,19 +30,7 @@ namespace Calculator
             while (!quit)
                 {
                     double pnum1 = GetValueFromUser("First number=");
-                if (quit)
-                {
-                    Console.WriteLine("KONIEC");
-                    Console.ReadKey();
-                    return;
-                }
                     double pnum2 = GetValueFromUser("Second number=");
-                if (quit)
-                {
-                    Console.WriteLine("KONIEC");
-                    Console.ReadKey();
-                    return;
-                }
                 ////result = pnum1 * pnum2;
                 ////Console.WriteLine("x*y="+result);
                 ////Console.WriteLine($"x*y={result}");
@@ -78,8 +66,9 @@ namespace Calculator
                 Console.Write(message);
                 string valueFromUser = Console.ReadLine();
                 if (valueFromUser=="q")
-                { quit = true;
-                    return 0;
+                {   Console.WriteLine("KONIEC");
+                    Console.ReadKey();
+                    Environment.Exit(0);
                 }
                 if (!double.TryParse(valueFromUser, out pnum1))
                 { ///Console.WriteLine("Nieliczba! Popraw!");
