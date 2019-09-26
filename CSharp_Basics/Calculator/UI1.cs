@@ -15,11 +15,9 @@ namespace Calculator
             {
                 Console.Write(message);
                 string valueFromUser = Console.ReadLine();
-                if (valueFromUser == "q")
+                if (IsQuit(valueFromUser))
                 {
-                    Console.WriteLine("KONIEC");
-                    Console.ReadKey();
-                    Environment.Exit(0);
+                    Quit();
                 }
                 if (!double.TryParse(valueFromUser, out pnum1))
                 { ///Console.WriteLine("Nieliczba! Popraw!");
@@ -34,13 +32,22 @@ namespace Calculator
             
             Console.Write("Operation: ");
             string oper = Console.ReadLine();
-            if (oper == "q")
+            if (IsQuit(oper))
             {
-                Console.WriteLine("KONIEC");
-                Console.ReadKey();
-                Environment.Exit(0);
+                Quit();
             }
             return oper;
         }
+        private static void Quit()
+        {
+                    Console.WriteLine("KONIEC");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+         }
+        private static bool IsQuit(string entry)
+        {
+            if (entry == "q") { return true; }
+            else return false;
         }
+    }
 }
