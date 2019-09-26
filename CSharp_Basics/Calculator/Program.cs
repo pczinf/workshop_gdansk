@@ -12,8 +12,8 @@ namespace Calculator
         public static void Main(string[] args)
         {
             double result;
-            int i = 0;
-            /*while (i<10)
+            /*int i = 0;
+              while (i<10)
             {
                 i++;
             }*/
