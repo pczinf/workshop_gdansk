@@ -39,6 +39,7 @@ namespace Calculator
             */
             Console.Write("Operation: ");
             string operation = Console.ReadLine();
+            /*
             if (operation == "+")
             {
                 result = Add(pnum1, pnum2);
@@ -60,7 +61,30 @@ namespace Calculator
                 Console.WriteLine($"x/y={result}");
             }
             else Console.WriteLine("Nieznana operacja!");
-            Console.ReadKey();
+            */
+            switch (operation)
+            {
+                case "+":
+                result = Add(pnum1, pnum2);
+                Console.WriteLine($"x+y={result}");
+                    break;
+                case "-":
+                result = Subtr(pnum1, pnum2);
+                Console.WriteLine($"x-y={result}");
+                    break;
+                case "*":
+                result = Mult(pnum1, pnum2);
+                Console.WriteLine($"x*y={result}");
+                    break;
+                case "/":
+                result = Div(pnum1, pnum2);
+                Console.WriteLine($"x/y={result}");
+                    break;
+
+                default: Console.WriteLine("Nieznana operacja!");
+                    break;
+        }
+        Console.ReadKey();
         }
 
         public static double Add(double num1, double num2)
