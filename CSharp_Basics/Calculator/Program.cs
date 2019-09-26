@@ -73,10 +73,15 @@ namespace Calculator
                 Console.WriteLine($"x-y={result}");
                     break;
                 case "*":
+                case "x":
                 result = Mult(pnum1, pnum2);
                 Console.WriteLine($"x*y={result}");
                     break;
                 case "/":
+                    if (pnum2==0)
+                    { Console.WriteLine("Dzielenie przez zero!");
+                        break;
+                    }
                 result = Div(pnum1, pnum2);
                 Console.WriteLine($"x/y={result}");
                     break;
