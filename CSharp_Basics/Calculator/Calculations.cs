@@ -8,24 +8,24 @@ namespace Calculator
 {
     public static class Calculations
     {
-        public static double Calculation(string oper, double pnum1, double pnum2)
+        public static double Calculation(MathData mathData)
         {
-            switch (oper)
+            switch (mathData.Operation)
             {
                 case "+":
-                    return Add(pnum1, pnum2);
+                    return Add(mathData.FirstNumber, mathData.SecondNumber);
                 case "-":
-                    return Subtr(pnum1, pnum2);
+                    return Subtr(mathData.FirstNumber, mathData.SecondNumber);
                 case "*":
                 case "x":
-                    return Mult(pnum1, pnum2);
+                    return Mult(mathData.FirstNumber, mathData.SecondNumber);
                 case "/":
-                    if (pnum2 == 0)
+                    if (mathData.SecondNumber == 0)
                     {
                         Console.WriteLine("Dzielenie przez zero!");
                         return 0;
                     }
-                    return Div(pnum1, pnum2);
+                    return Div(mathData.FirstNumber, mathData.SecondNumber);
                 default:
                     Console.WriteLine("Nieznana operacja!");
                     return 0;

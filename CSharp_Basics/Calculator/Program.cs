@@ -24,12 +24,14 @@ namespace Calculator
             { }*/
             while (!quit)
                 {
-                    double pnum1 = UI1.GetValueFromUser("First number=");
-                    double pnum2 = UI1.GetValueFromUser("Second number=");
-                    string operation = UI1.GetOperationFromUser();
-                    result = Calculations.Calculation(operation, pnum1, pnum2);
-                    Console.WriteLine($"Wynik={result}");
-                    Console.ReadKey();
+                /*MathData mathData = new MathData();
+                mathData.FirstNumber = UI1.GetValueFromUser("First number=");
+                mathData.SecondNumber = UI1.GetValueFromUser("Second number=");
+                mathData.Operation = UI1.GetOperationFromUser();*/
+                MathData mathData = UI1.GetAllValuesFromUser();
+                result = Calculations.Calculation(mathData);
+                Console.WriteLine($"Wynik={result}");
+                Console.ReadKey();
                 }
         }
 

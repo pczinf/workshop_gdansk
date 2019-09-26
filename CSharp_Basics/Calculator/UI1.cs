@@ -8,7 +8,15 @@ namespace Calculator
 {
     class UI1
     {
-        public static double GetValueFromUser(string message)
+        public static MathData GetAllValuesFromUser()
+        {
+            double first = GetValueFromUser("First number=");
+            double second = GetValueFromUser("Second number=");
+            string operation = GetOperationFromUser();
+
+            return new MathData(first, second, operation);
+        }
+            public static double GetValueFromUser(string message)
         {
             double pnum1;
             while (true)
