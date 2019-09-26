@@ -64,7 +64,7 @@ namespace Calculator
                         Console.ReadKey();
                         return;
                     }
-                    result = Calculation(operation, pnum1, pnum2);
+                    result = Calculations.Calculation(operation, pnum1, pnum2);
                     Console.WriteLine($"Wynik={result}");
                     Console.ReadKey();
                 }
@@ -89,7 +89,7 @@ namespace Calculator
             }
         }
 
-        public static double Calculation(string oper, double pnum1, double pnum2)
+/*        public static double Calculation(string oper, double pnum1, double pnum2)
         {
             switch (oper)
             {
@@ -135,6 +135,6 @@ namespace Calculator
         {
             double result = num1 / num2;
             return result;
-        }
+        }*/
     }
 }
