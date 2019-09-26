@@ -16,101 +16,58 @@ namespace Calculator
              double result = x * y;
              */
             double result;
-          /*  Console.Write("First number=");
-            string num1 = Console.ReadLine();
-            ////int pnum1 = int.Parse(num1);
-            ////double pnum1 = double.Parse(num1);
-            double pnum1;
-            if (!double.TryParse(num1, out pnum1))
-            { Console.WriteLine($"Nieliczba! Używamy wartości domyślnej: {pnum1}"); }*/
-            double pnum1 = GetValueFromUser("First number=");
-          /*  Console.Write("Second number=");
-            string num2 = Console.ReadLine();
-            ////int pnum2 = int.Parse(num2);
-            ////double pnum2 = double.Parse(num2);
-            double pnum2;
-            if (!double.TryParse(num2, out pnum2))
-            { Console.WriteLine($"Nieliczba! Używamy wartości domyślnej: {pnum2}"); }*/
-            double pnum2 = GetValueFromUser("Second number=");
-            ////result = pnum1 * pnum2;
-            ////Console.WriteLine("x*y="+result);
-            ////Console.WriteLine($"x*y={result}");
-            /*
-            result = Add(pnum1, pnum2);
-            Console.WriteLine($"x+y={result}");
-            result = Subtr(pnum1, pnum2);
-            Console.WriteLine($"x-y={result}");
-            result = Mult(pnum1, pnum2);
-            Console.WriteLine($"x*y={result}");
-            result = Div(pnum1, pnum2);
-            Console.WriteLine($"x/y={result}");
-            */
-            Console.Write("Operation: ");
-            string operation = Console.ReadLine();
-            /*
-            if (operation == "+")
+            int i = 0;
+            /*while (i<10)
             {
-                result = Add(pnum1, pnum2);
-                Console.WriteLine($"x+y={result}");
-            }
-            else if (operation == "-")
-            {
-                result = Subtr(pnum1, pnum2);
-                Console.WriteLine($"x-y={result}");
-            }
-            else if (operation == "*")
-            {
-                result = Mult(pnum1, pnum2);
-                Console.WriteLine($"x*y={result}");
-            }
-            else if (operation == "/")
-            {
-                result = Div(pnum1, pnum2);
-                Console.WriteLine($"x/y={result}");
-            }
-            else Console.WriteLine("Nieznana operacja!");
-            */
-            /*
-            switch (operation)
-            {
-                case "+":
-                result = Add(pnum1, pnum2);
-                Console.WriteLine($"x+y={result}");
-                    break;
-                case "-":
-                result = Subtr(pnum1, pnum2);
-                Console.WriteLine($"x-y={result}");
-                    break;
-                case "*":
-                case "x":
-                result = Mult(pnum1, pnum2);
-                Console.WriteLine($"x*y={result}");
-                    break;
-                case "/":
-                    if (pnum2==0)
-                    { Console.WriteLine("Dzielenie przez zero!");
-                        break;
+                i++;
+            }*/
+            /*do { i++;
+            
+            } while (i<10);*/
+            /*for (int j=0;j<10;j++)
+            { }*/
+            while (true)
+                {
+                    double pnum1 = GetValueFromUser("First number=");
+                    double pnum2 = GetValueFromUser("Second number=");
+                    ////result = pnum1 * pnum2;
+                    ////Console.WriteLine("x*y="+result);
+                    ////Console.WriteLine($"x*y={result}");
+                    /*
+                    result = Add(pnum1, pnum2);
+                    Console.WriteLine($"x+y={result}");
+                    result = Subtr(pnum1, pnum2);
+                    Console.WriteLine($"x-y={result}");
+                    result = Mult(pnum1, pnum2);
+                    Console.WriteLine($"x*y={result}");
+                    result = Div(pnum1, pnum2);
+                    Console.WriteLine($"x/y={result}");
+                    */
+                    Console.Write("Operation: ");
+                    string operation = Console.ReadLine();
+                    if (operation == "q")
+                    {
+                        Console.WriteLine("KONIEC");
+                        Console.ReadKey();
+                        return;
                     }
-                result = Div(pnum1, pnum2);
-                Console.WriteLine($"x/y={result}");
-                    break;
-
-                default: Console.WriteLine("Nieznana operacja!");
-                    break;
-        }*/
-            result = Calculation(operation, pnum1, pnum2);
-            Console.WriteLine($"Wynik={result}");
-            Console.ReadKey();
+                    result = Calculation(operation, pnum1, pnum2);
+                    Console.WriteLine($"Wynik={result}");
+                    Console.ReadKey();
+                }
         }
 
         public static double GetValueFromUser(string message)
         {
-            Console.Write(message);
-            string valueFromUser = Console.ReadLine();
-            double pnum1;
-            if (!double.TryParse(valueFromUser, out pnum1))
-            { Console.WriteLine($"Nieliczba! Używamy wartości domyślnej: {pnum1}"); }
-            return pnum1;
+            while (true)
+            {
+                Console.Write(message);
+                string valueFromUser = Console.ReadLine();
+                double pnum1;
+                if (!double.TryParse(valueFromUser, out pnum1))
+                { Console.WriteLine("Nieliczba! Popraw!"); }
+                else return pnum1;
+            }
         }
 
         public static double Calculation(string oper, double pnum1, double pnum2)
