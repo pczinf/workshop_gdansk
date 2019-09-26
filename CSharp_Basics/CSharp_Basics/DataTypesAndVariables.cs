@@ -96,9 +96,9 @@ namespace CSharp_Basics
         {
             int example = 5;
             example += 10;
-            //example is 15
+            ////example is 15
             example++;
-            //example is 16 know;
+            ////example is 16 know;
             Assert.AreEqual(example, 16);
         }
 
@@ -126,7 +126,7 @@ namespace CSharp_Basics
         /// repeat operations add, subtract, divide, and multiply for double
         /// </summary>
         [Test]
-        public void float_double_decimal()
+        public void Float_double_decimal()
         {
             decimal exampleDecimal = new decimal(10.5);
 
@@ -147,9 +147,6 @@ namespace CSharp_Basics
             Assert.AreEqual(subtractd, subtract, "Wrong value maybe other way around?");
             Assert.AreEqual(multiplyd, multiply, "Example Has wrong value did you changed it?");
             Assert.AreEqual(divided, (decimal)divide, "Example Has wrong value did you changed it?");
-
-            
-
         }
 
         //        /// <summary>
