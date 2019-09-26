@@ -44,25 +44,22 @@ namespace Calculator
                 result = Add(pnum1, pnum2);
                 Console.WriteLine($"x+y={result}");
             }
-
-            if (operation == "-")
+            else if (operation == "-")
             {
                 result = Subtr(pnum1, pnum2);
                 Console.WriteLine($"x-y={result}");
             }
-
-            if (operation == "*")
+            else if (operation == "*")
             {
                 result = Mult(pnum1, pnum2);
                 Console.WriteLine($"x*y={result}");
             }
-
-            if (operation == "/")
+            else if (operation == "/")
             {
                 result = Div(pnum1, pnum2);
                 Console.WriteLine($"x/y={result}");
             }
-
+            else Console.WriteLine("Nieznana operacja!");
             Console.ReadKey();
         }
 
