@@ -8,17 +8,8 @@ using System.Threading;
 namespace SeleniumTests
 {
     [TestFixture]
-    public class CategoriesTest
+    public class CategoriesTest : TestBase
     {
-        IWebDriver driver;
-
-        [SetUp]
-        public void Setup()
-        {
-            driver = new ChromeDriver();
-            var waittime = new System.TimeSpan(0, 0, 3);
-            driver.Manage().Timeouts().ImplicitWait = waittime;
-        }
 
         [Test]
         public void Test01()
@@ -91,10 +82,6 @@ namespace SeleniumTests
             StringAssert.Contains(actualElementCount, text);
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-            driver.Quit();
-        }
+
     }
 }
