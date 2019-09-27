@@ -5,6 +5,7 @@ using System;
 using System.Threading;
 //using OpenQA.Selenium.Support;
 using OpenQA.Selenium.Support.UI;
+using System.Configuration;
 
 namespace SeleniumTests.Pages
 {
@@ -23,7 +24,8 @@ namespace SeleniumTests.Pages
 
         public void GoToPage()
         {
-            driver.Navigate().GoToUrl("http://automationpractice.com/index.php?controller=contact");
+            string url = ConfigurationManager.AppSettings["url"];
+            driver.Navigate().GoToUrl($"{url}/index.php?controller=contact");
         }
 
         public void ClickSubmitButton()
