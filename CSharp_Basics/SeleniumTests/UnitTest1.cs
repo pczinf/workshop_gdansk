@@ -10,10 +10,16 @@ namespace SeleniumTests
     public class UnitTest1
     {
         IWebDriver driver;
+
+        [SetUp]
+        public void Setup()
+        {
+            driver = new ChromeDriver();
+        }
+
         [Test]
         public void Test01()
         {
-            driver = new ChromeDriver();
             Assert.AreEqual(2, 1);
            
         }
