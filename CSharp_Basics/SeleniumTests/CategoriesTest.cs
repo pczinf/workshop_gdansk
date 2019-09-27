@@ -8,7 +8,7 @@ using System.Threading;
 namespace SeleniumTests
 {
     [TestFixture]
-    public class UnitTest1
+    public class CategoriesTest
     {
         IWebDriver driver;
 
